@@ -8,6 +8,7 @@
 
 void* connectionhandler();
 
+
 int main(){
 	parsedconfig config = parseconfig("config.txt");
 
