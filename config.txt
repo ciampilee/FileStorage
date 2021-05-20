@@ -1,0 +1,4 @@
+threadnum = 5
+memsize = 10
+sockfile[30] = socket
+logfile[30] = log

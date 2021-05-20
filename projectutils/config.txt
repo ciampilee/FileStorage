@@ -1,0 +1,4 @@
+bl = 8
+bc = 10
+bbb = hahah.txt
+uhuh = nnn.txt
