@@ -1,3 +1,5 @@
+#include<stdio.h>
+#define MIN(X, Y) (((X) < (Y)) ? (X) : (Y))
 /* 	parsedconfig: oggetto di tipo struct parsedfile contenente le informazioni 
 	relative alla configurazione del server descritte sotto */
 typedef struct parsedfile{
@@ -5,6 +7,8 @@ typedef struct parsedfile{
 	int memsize;	//dimensione della memoria
 	char sockfile[30];	//path del file di socket
 	char logfile[30];	//path del file di log
+	int clientbufsz;
+	int serverbufsz;
 } parsedconfig;
 
 /*	mysock: oggetto di tipo struct mysock contenente la coppia {sock_fd, sock_cl} dove
@@ -18,3 +22,5 @@ typedef struct mysock{
 parsedconfig parseconfig(char*);
 int unixServerSocket(char*, int);
 int unixClientSocket(char*);
+long filesize(FILE*);
+void sock_sendfile(int, FILE*, int);

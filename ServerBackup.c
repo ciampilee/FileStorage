@@ -33,12 +33,12 @@ int main(){
 void* connectionhandler(void* pcl){
 	int cl = *((int*)pcl);
 	printf("debug : connection established. connection number = %d\n", cl);
-	int rcv;
-	char buf[100];
 
-	while(rcv = read(cl, buf, sizeof(buf))){
-		printf("%.*s",rcv-1, buf);
-    }
+	char buf[100];
+	int rcv;
+
+	while(rcv = read(cl, buf, sizeof(buf)))
+		printf("CLIENT said :%.*s\n", rcv, buf);
 
 	close(cl);
 	return NULL;
